@@ -23,6 +23,10 @@ export class AddTodoComponent {
     console.log(this.value, '--->')
   }
 
+  deleteDeo() {
+    this.value = '';
+  }
+
   addTodo() {
     if(this.value.trim().length) {
       this.todoService.addTodos(this.value);
