@@ -1,1 +1,5 @@
-<input [value]="value" (input)="handleChange($event)"/>
+<input [value]="value" (input)="handleChange($event)" [disabled]="value === 'deo'"/>
+<br/>
+@if(value === 'deo') {
+    <button (click)="handleDeleteDeo()">Delete this stupid {{value}}</button>
+}

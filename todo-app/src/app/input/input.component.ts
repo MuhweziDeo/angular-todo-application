@@ -8,9 +8,14 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class InputComponent {
   @Output() valueChange = new EventEmitter<string>();
-  value = '';
+  @Input() value = '';
+  @Output() deleteDeo =  new EventEmitter();
 
   handleChange(event:any) {
     this.valueChange.emit(event.target.value);
+  }
+
+  handleDeleteDeo() {
+    this.deleteDeo.emit();
   }
 }

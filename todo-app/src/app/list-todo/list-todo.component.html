@@ -1,0 +1,16 @@
+<ul>
+@for(todo of todos; track todo) {
+    <li>{{todo}}</li>
+}
+</ul>
+
+<br/>
+<h1>Todos for server</h1>
+
+<ul *ngIf="$jsonTodos | async as todoList">
+    <!-- {{todoList | json}} -->
+   @for(todo of todoList.todos; track todo.id) {
+    <li>{{todo.id}} {{todo.todo}}</li>
+
+   }
+</ul>
