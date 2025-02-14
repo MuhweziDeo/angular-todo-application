@@ -1,5 +1,5 @@
 <ul>
-@for(todo of todos; track todo) {
+@for(todo of todos; track todo;) {
     <li>{{todo}}</li>
 }
 </ul>
@@ -11,6 +11,5 @@
     <!-- {{todoList | json}} -->
    @for(todo of todoList.todos; track todo.id) {
     <li>{{todo.id}} {{todo.todo}}</li>
-
    }
 </ul>

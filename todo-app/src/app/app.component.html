@@ -178,9 +178,18 @@
 </style>
 
 <main>
-  <app-add-todo></app-add-todo>
+  <input [(ngModel)]="search" (ngModelChange)="handleSearch($event)" />
   <br/>
-  <app-list-todo></app-list-todo>
+  <app-add-todo (addTodoEmit)="addTodo($event)" (deleteTodoEmit)="deleteTodo()" (handleChangeEmit)="handleChange($event)"></app-add-todo>
+  <br/>
+  <app-list-todo [todos]="todos" [$jsonTodos]="$jsonTodos"></app-list-todo>
+
+  <ng-template
+  *ngIf="value == 'deo'; else ifdeoTemplate"
+  ></ng-template>
+  <ng-template  #ifdeoTemplate>
+    <p>Hello Deo</p>
+  </ng-template>
 </main>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

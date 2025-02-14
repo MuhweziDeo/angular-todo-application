@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { TodosService } from '../services/todos.service';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
@@ -10,15 +10,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './list-todo.component.scss'
 })
 export class ListTodoComponent {
-  protected todos: string[] = [];
-  $jsonTodos: Observable<{todos: {id: number, todo: 'string', completed: boolean}[]}> = new Observable();
-  constructor(
-    private todoService: TodosService
-  ) {
-    this.$jsonTodos = this.todoService.getAsyncTodos();
-  }
-
-  ngOnInit() {
-    this.todos = this.todoService.getTodos();
-  }
+  @Input() todos: string[] = [];
+  @Input() $jsonTodos: Observable<{todos: {id: number, todo: 'string', completed: boolean}[]}> = new Observable();
 }
