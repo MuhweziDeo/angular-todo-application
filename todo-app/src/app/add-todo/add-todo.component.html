@@ -1,5 +1,8 @@
 <div>
     <app-input  (valueChange)="handleChange($event)" [value]="value" (deleteDeo)="deleteDeo()"></app-input>
-    <button class="btn btn-primary" (click)="addTodo()">Add Todo</button>
+    <!-- <button class="btn btn-primary" (click)="addTodo()">Add Todo</button> -->
+     <button buttonBase (click)="addTodo()">
+        Add Todo
+     </button>
 </div>
 
